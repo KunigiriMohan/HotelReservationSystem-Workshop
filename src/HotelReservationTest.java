@@ -8,9 +8,13 @@ class HotelReservationTest {
     void add() throws ParseException {
         HotelReservation obj = new HotelReservation();
 
-        assertEquals(1,obj.add("LakeWood",110,90, 80, 80));
-        assertEquals(2,obj.add("BridgeWood",150,50, 60, 50));
-        assertEquals(3,obj.add("RidgeWood",220,150, 150, 40));
+        obj.add("LakeWood",110);                    //Sending values to add method to store hotel data
+        obj.add("Bridgewood",160);
+        obj.add("RidgeWood",220);
+
+        assertEquals(110,obj.rate_of_Hotels("2020-09-10","2021-11-21"));            //Sending date to check output amount is minimum
+
+
 
     }
 
