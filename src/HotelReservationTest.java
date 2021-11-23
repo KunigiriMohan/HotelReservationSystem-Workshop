@@ -1,21 +1,18 @@
-import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HotelReservationTest {
 
     @org.junit.jupiter.api.Test
-    void add() throws ParseException {
+    void add()  {
         HotelReservation obj = new HotelReservation();
 
-        obj.add("LakeWood",110);                    //Sending values to add method to store hotel data
-        obj.add("Bridgewood",160);
-        obj.add("RidgeWood",220);
+        assertEquals(1,obj.add("LakeWood",110,90));         //Sending values to get cheap hotel
+        assertEquals(2,obj.add("BridgeWood",160,60));
+        assertEquals(3,obj.add("RidgeWood",220,150));
 
-        assertEquals(110,obj.rate_of_Hotels("2020-09-10","2021-11-21"));            //Sending date to check output amount is minimum
-
-
-
+        assertEquals("LakeWood",obj.rate_of_Hotels("2020-09-11"));                  //Giving date on which we have to find
+        assertEquals("BridgeWood",obj.rate_of_Hotels("2020-09-12"));
     }
 
 }
